@@ -11,6 +11,6 @@ class FixerFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'fixer';
+        return Fixer::class;
     }
 }

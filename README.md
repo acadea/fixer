@@ -16,6 +16,8 @@ Follow us on Youtube:
 
 ## Installation
 
+This package assumes you have [php-cs-fixer](https://github.com/FriendsOfPhp/PHP-CS-Fixer) installed at `/usr/local/bin/php-cs-fixer`
+
 You can install the package via composer:
 
 ```bash
