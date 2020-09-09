@@ -6,11 +6,8 @@ use Illuminate\Support\Facades\Storage;
 
 class Fixer
 {
-
     public function __construct(array $rules)
     {
-
-
     }
 
     public function format(string $code)
@@ -22,8 +19,6 @@ class Fixer
         Storage::disk('local')->put($path, $code);
 
         exec('php-cs-fixer fix ' . $path);
-
-
     }
 
     protected function generateRuleString()
@@ -32,9 +27,9 @@ class Fixer
 
         $result = '';
 
-        foreach ($rules as $key => $rule){
-
+        foreach ($rules as $key => $rule) {
         }
+
         return $result;
     }
 }

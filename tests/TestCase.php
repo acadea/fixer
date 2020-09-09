@@ -2,8 +2,8 @@
 
 namespace Acadea\Fixer\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Acadea\Fixer\FixerServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

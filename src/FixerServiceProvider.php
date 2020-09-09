@@ -2,8 +2,8 @@
 
 namespace Acadea\Fixer;
 
-use Illuminate\Support\ServiceProvider;
 use Acadea\Fixer\Commands\FixerCommand;
+use Illuminate\Support\ServiceProvider;
 
 class FixerServiceProvider extends ServiceProvider
 {
