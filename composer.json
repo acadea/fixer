@@ -1,6 +1,6 @@
 {
     "name": "acadea/fixer",
-    "description": "Laravel package to programatically run php cs fixer",
+    "description": "Laravel package to programmatically fix code using php cs fixer",
     "keywords": [
         "acadea",
         "fixer"

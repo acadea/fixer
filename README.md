@@ -1,34 +1,26 @@
-# Laravel package to programatically run php cs fixer
+# Laravel Fixer
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/acadea/fixer.svg?style=flat-square)](https://packagist.org/packages/acadea/fixer)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/acadea/fixer/run-tests?label=tests)](https://github.com/acadea/fixer/actions?query=workflow%3Arun-tests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/acadea/fixer.svg?style=flat-square)](https://packagist.org/packages/acadea/fixer)
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+A tiny Laravel package to programmatically fix code using PHP CS Fixer. 
 
-## Support us
 
-Learn how to create a 
+## Support us 
 
-Follow us on Youtube: 
+Follow us on Youtube: [Acadea.io](https://www.youtube.com/channel/UCU5RsUGkVcPM9QvFHyKm1OQ)
 
 
 ## Installation
 
-This package assumes you have [php-cs-fixer](https://github.com/FriendsOfPhp/PHP-CS-Fixer) installed at `/usr/local/bin/php-cs-fixer`
+This package assumes you have [php-cs-fixer](https://github.com/FriendsOfPhp/PHP-CS-Fixer) installed at `./vendor/bin/php-cs-fixer`
 
 You can install the package via composer:
 
 ```bash
 composer require acadea/fixer
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Acadea\Fixer\FixerServiceProvider" --tag="migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -40,19 +32,27 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'binary' => 'path/to/bin',
+    'rules' => [
+        // php cs fixer rules, see the docs for more info
+    ]   
 ];
 ```
 
 ## Usage
 
-``` php
-$fixer = new Acadea\Fixer();
-echo $fixer->echoPhrase('Hello, Acadea!');
+```php
+use Acadea\Fixer\Facade\Fixer;
+
+// ..
+
+$fixed = Fixer::format($code);
+
 ```
 
 ## Testing
 
-``` bash
+```bash
 composer test
 ```
 

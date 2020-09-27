@@ -2,8 +2,8 @@
 
 namespace Acadea\Fixer\Tests;
 
-use Acadea\Fixer\Facade\FixerFacade;
-use Acadea\Fixer\Fixer;
+use Acadea\Fixer\Facade\Fixer;
+use Acadea\Fixer\Fixer as FixerBase;
 use Illuminate\Support\Facades\Storage;
 
 class FixerTest extends TestCase
@@ -21,7 +21,7 @@ class FixerTest extends TestCase
     /** @test */
     public function test_fixer_can_fix_code()
     {
-        $fixer = new Fixer();
+        $fixer = new FixerBase();
 
         $fixed = $fixer->format($this->badCode());
 
@@ -30,14 +30,14 @@ class FixerTest extends TestCase
 
     public function test_can_use_facade()
     {
-        $fixed = FixerFacade::format($this->badCode());
+        $fixed = Fixer::format($this->badCode());
 
         $this->assertEquals($this->goodCode(), $fixed);
     }
 
     public function test_no_leftover_tmp_file_left_in_local_storage()
     {
-        FixerFacade::format('abc');
+        Fixer::format('abc');
 
         $this->assertFalse(Storage::disk('local')->exists('tmp/csfix.php'));
     }
