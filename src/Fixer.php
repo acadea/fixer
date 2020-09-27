@@ -2,7 +2,9 @@
 
 namespace Acadea\Fixer;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
+use League\Flysystem\FileNotFoundException;
 
 class Fixer
 {
@@ -20,6 +22,14 @@ class Fixer
         $rules = json_encode($this->rules);
 
         $csfixerBin = __DIR__ . '/..' . \config('fixer.binary');
+
+        if(!file_exists($csfixerBin)){
+            $csfixerBin = App::basePath() . config('fixer.binary');
+        }
+
+        if(!file_exists($csfixerBin)){
+            throw new FileNotFoundException($csfixerBin);
+        }
 
         Storage::disk('local')->put($path, $code);
 
