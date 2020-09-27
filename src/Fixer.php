@@ -23,11 +23,11 @@ class Fixer
 
         $csfixerBin = __DIR__ . '/..' . \config('fixer.binary');
 
-        if(!file_exists($csfixerBin)){
+        if (! file_exists($csfixerBin)) {
             $csfixerBin = App::basePath() . config('fixer.binary');
         }
 
-        if(!file_exists($csfixerBin)){
+        if (! file_exists($csfixerBin)) {
             throw new FileNotFoundException($csfixerBin);
         }
 
