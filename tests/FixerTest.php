@@ -10,12 +10,12 @@ class FixerTest extends TestCase
 {
     private function badCode()
     {
-        return file_get_contents(__DIR__ . '/files/badcode.php');
+        return file_get_contents(__DIR__ . '/files/badcode.stub');
     }
 
     private function goodCode()
     {
-        return file_get_contents(__DIR__ . '/files/styledcode.php');
+        return file_get_contents(__DIR__ . '/files/styledcode.stub');
     }
 
     /** @test */

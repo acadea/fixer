@@ -23,7 +23,7 @@ class Fixer
 
         Storage::disk('local')->put($path, $code);
 
-        exec($csfixerBin . ' fix ' . storage_path('app/' . $path) . ' --rules=\'' . $rules . '\'');
+        $result = exec($csfixerBin . ' fix ' . storage_path('app/' . $path) . ' --rules=\'' . $rules . '\'');
 
         // read file content from path
         $fixedCode = Storage::disk('local')->get($path);
