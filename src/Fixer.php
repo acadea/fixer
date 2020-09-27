@@ -3,8 +3,6 @@
 namespace Acadea\Fixer;
 
 use Illuminate\Support\Facades\Storage;
-use PhpCsFixer\Config;
-use PhpCsFixer\Finder;
 
 class Fixer
 {
@@ -36,5 +34,4 @@ class Fixer
         // return the content as string
         return $fixedCode;
     }
-
 }

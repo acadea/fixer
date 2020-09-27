@@ -17,7 +17,7 @@ class FixerServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(Fixer::class, function ($app){
+        $this->app->singleton(Fixer::class, function ($app) {
             return new Fixer();
         });
 
