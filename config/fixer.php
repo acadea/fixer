@@ -7,6 +7,7 @@ return [
         // copied from spatie/skeleton package
         '@PSR2' => true,
         'array_syntax' => ['syntax' => 'short'],
+        'array_indentation' => true,
         'ordered_imports' => ['sortAlgorithm' => 'alpha'],
         'no_unused_imports' => true,
         'not_operator_with_successor_space' => true,
